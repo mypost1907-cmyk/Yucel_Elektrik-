@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yücel Elektrik | Profesyonel Elektrik Servisi ve Malzeme Kataloğu</title>
+    <meta name="description"
+        content="Yücel Elektrik - A'dan Z'ye elektrik malzemeleri, profesyonel işçilik ve yaratıcı elektrik çözümleri. En uygun fiyatlar ve kaliteli hizmet.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container" style="display: flex; width: 100%; align-items: center;">
+            <div class="logo">YÜCEL ELEKTRİK</div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Ana Sayfa</a></li>
+                    <li><a href="#katalog">A-Z Malzeme & İşçilik</a></li>
+                    <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                    <li><a href="#iletisim">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <img src="hero.png" alt="Profesyonel Elektrik Hizmetleri">
+        <div class="container" style="z-index: 3; position: relative;">
+            <div class="hero-content">
+                <h1>Enerjinizi Güvenle Yönetin</h1>
+                <p>Modern teknoloji ve yılların tecrübesiyle, evinizden iş yerinize kadar her alanda profesyonel
+                    elektrik çözümleri sunuyoruz.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#katalog" class="btn btn-primary">Kataloğu İncele</a>
+                    <a href="#iletisim" class="btn" style="border: 1px solid var(--primary);">Hızlı İletişim</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-section" id="katalog">
+        <div class="container">
+            <div class="section-header">
+                <h2>A'dan Z'ye Malzeme ve İşçilik</h2>
+                <p>Tüm ihtiyaçlarınız için detaylı fiyat ve teknik bilgi listesi</p>
+            </div>
+
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <input type="text" id="catalogSearch" class="search-input"
+                        placeholder="Malzeme veya hizmet ara (Örn: Priz, Sigorta, Montaj...)">
+                    <i class="fas fa-search"
+                        style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--text-dim);"></i>
+                </div>
+            </div>
+
+            <div id="catalogGrid" class="catalog-grid">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="hizmetler">
+        <div class="container">
+            <div class="section-header">
+                <h2>Neden Yücel Elektrik?</h2>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                <div>
+                    <h3>7/24 Teknik Destek</h3>
+                    <p>Elektrik arızaları bekletmez. Acil durumlarda hızlı müdahale ekibimizle her zaman yanınızdayız.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card" style="border-left-color: var(--secondary);">
+                <div class="service-icon" style="color: var(--secondary);"><i class="fas fa-shield-halved"></i></div>
+                <div>
+                    <h3>Sertifikalı Güvenlik</h3>
+                    <p>Tüm işlemlerimiz TSE standartlarına uygun malzeme ve uzman personelle gerçekleştirilir.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                <div>
+                    <h3>Şeffaf Fiyatlandırma</h3>
+                    <p>İşçilik ve malzeme maliyetlerini önceden bilin, sürpriz faturalarla karşılaşmayın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="iletisim">
+        <div class="container">
+            <div class="logo" style="margin-bottom: 2rem;">YÜCEL ELEKTRİK</div>
+            <p style="margin-bottom: 2rem; color: var(--text-dim);">İstanbul'un her noktasına profesyonel hizmet.</p>
+            <div style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <i class="fas fa-phone" style="color: var(--primary); margin-bottom: 0.5rem; display: block;"></i>
+                    <span>05XX XXX XX XX</span>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"
+                        style="color: var(--primary); margin-bottom: 0.5rem; display: block;"></i>
+                    <span>bilgi@yucelelektrik.com</span>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"
+                        style="color: var(--primary); margin-bottom: 0.5rem; display: block;"></i>
+                    <span>Merkez Mah. No:123, İstanbul</span>
+                </div>
+            </div>
+            <div style="color: var(--text-dim); font-size: 0.8rem;">
+                © 2026 Yücel Elektrik. Tüm Hakları Saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
