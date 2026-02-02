@@ -1,12 +1,13 @@
 :root {
-    --primary: #00d4ff;
-    --primary-dark: #008cb3;
-    --secondary: #ffcc00;
+    --primary: #ffcc00;
+    /* Elektrikçi Sarısı */
+    --primary-dark: #cca300;
+    --secondary: #ffae00;
     --bg-dark: #0a0e14;
     --bg-card: #161b22;
     --text-light: #f0f6fc;
     --text-dim: #8b949e;
-    --accent-gradient: linear-gradient(135deg, #00d4ff 0%, #008cb3 100%);
+    --accent-gradient: linear-gradient(135deg, #ffcc00 0%, #ffae00 100%);
     --font-main: 'Inter', sans-serif;
 }
 
@@ -28,13 +29,16 @@ body {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-dark);
 }
+
 ::-webkit-scrollbar-thumb {
     background: #30363d;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
 }
@@ -151,7 +155,7 @@ header nav ul li a:hover {
 
 .btn-primary:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.3);
 }
 
 /* Catalog Section */
@@ -277,6 +281,7 @@ footer {
     .hero-content h1 {
         font-size: 2.5rem;
     }
+
     header nav {
         display: none;
     }
