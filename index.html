@@ -4,130 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yücel Elektrik | Profesyonel Elektrik Servisi ve Malzeme Kataloğu</title>
+    <title>Yücel Elektrik | A'dan Z'ye Elektrik Malzemeleri & İşçilik</title>
     <meta name="description"
-        content="Yücel Elektrik - A'dan Z'ye elektrik malzemeleri, profesyonel işçilik ve yaratıcı elektrik çözümleri. En uygun fiyatlar ve kaliteli hizmet.">
+        content="Yücel Elektrik - Profesyonel elektrik malzemeleri, hırdavat ve işçilik çözümleri. Ayaz Hırdavat tarzı geniş katalog.">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
+    <div class="top-bar">
+        <div class="container" style="display: flex; justify-content: space-between;">
+            <span><i class="fas fa-phone"></i> Müşteri Destek: 05XX XXX XX XX</span>
+            <span><i class="fas fa-truck"></i> 15:00'e Kadar Verilen Siparişler Aynı Gün Kargoda!</span>
+        </div>
+    </div>
+
     <header>
-        <div class="container" style="display: flex; width: 100%; align-items: center;">
-            <div class="logo">YÜCEL ELEKTRİK</div>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Ana Sayfa</a></li>
-                    <li><a href="#katalog">A-Z Malzeme & İşçilik</a></li>
-                    <li><a href="#hizmetler">Hizmetlerimiz</a></li>
-                    <li><a href="#iletisim">İletişim</a></li>
-                </ul>
-            </nav>
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">YÜCEL <span>ELEKTRİK</span></div>
+
+                <div class="search-box">
+                    <input type="text" id="catalogSearch" placeholder="Aramak istediğiniz ürün veya hizmeti yazın...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="user-actions">
+                    <div class="action-item">
+                        <i class="fas fa-user"></i>
+                        <span>Giriş Yap</span>
+                    </div>
+                    <div class="action-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Listem</span>
+                    </div>
+                    <div class="action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Sepetim</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="hero" id="hero">
-        <div class="hero-overlay"></div>
-        <img src="hero.png" alt="Profesyonel Elektrik Hizmetleri">
-        <div class="container" style="z-index: 3; position: relative;">
-            <div class="hero-content">
-                <h1>Enerjinizi Güvenle Yönetin</h1>
-                <p>Modern teknoloji ve yılların tecrübesiyle, evinizden iş yerinize kadar her alanda profesyonel
-                    elektrik çözümleri sunuyoruz.</p>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="#katalog" class="btn btn-primary">Kataloğu İncele</a>
-                    <a href="#iletisim" class="btn" style="border: 1px solid var(--primary);">Hızlı İletişim</a>
+    <main class="container">
+        <div class="main-layout">
+            <!-- Sidebar / Categories -->
+            <aside class="sidebar">
+                <div class="category-menu">
+                    <div class="category-menu-title">
+                        <i class="fas fa-bars"></i> KATEGORİLER
+                    </div>
+                    <ul class="category-list">
+                        <li class="category-item" onclick="filterCategory('Hepsi')">Tüm Ürünler <i
+                                class="fas fa-chevron-right"></i></li>
+                        <li class="category-item" onclick="filterCategory('Kablo')">Kablo Çeşitleri <i
+                                class="fas fa-chevron-right"></i></li>
+                        <li class="category-item" onclick="filterCategory('Anahtar-Priz')">Anahtar & Priz <i
+                                class="fas fa-chevron-right"></i></li>
+                        <li class="category-item" onclick="filterCategory('Aydınlatma')">Aydınlatma Grubu <i
+                                class="fas fa-chevron-right"></i></li>
+                        <li class="category-item" onclick="filterCategory('Şalt Malzeme')">Şalt Malzemeleri <i
+                                class="fas fa-chevron-right"></i></li>
+                        <li class="category-item" onclick="filterCategory('İşçilik')">İşçilik Hizmetleri <i
+                                class="fas fa-chevron-right"></i></li>
+                        <li class="category-item" onclick="filterCategory('Hırdavat')">Elektrikli El Aletleri <i
+                                class="fas fa-chevron-right"></i></li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="catalog-section" id="katalog">
-        <div class="container">
-            <div class="section-header">
-                <h2>A'dan Z'ye Malzeme ve İşçilik</h2>
-                <p>Tüm ihtiyaçlarınız için detaylı fiyat ve teknik bilgi listesi</p>
-            </div>
-
-            <div class="search-container">
-                <div class="search-wrapper">
-                    <input type="text" id="catalogSearch" class="search-input"
-                        placeholder="Malzeme veya hizmet ara (Örn: Priz, Sigorta, Montaj...)">
-                    <i class="fas fa-search"
-                        style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--text-dim);"></i>
+                <div
+                    style="margin-top: 2rem; background: var(--primary); padding: 1.5rem; border-radius: 4px; text-align: center;">
+                    <h3 style="margin-bottom: 0.5rem;">HIZLI TEKLİF</h3>
+                    <p style="font-size: 0.85rem;">Projeniz için malzeme listesi gönderin, fiyatlandıralım.</p>
+                    <button class="add-to-cart"
+                        style="width: 100%; margin-top: 1rem; background: #fff; color: #000;">WhatsApp Gönder</button>
                 </div>
-            </div>
+            </aside>
 
-            <div id="catalogGrid" class="catalog-grid">
-                <!-- Javascript will populate this -->
-            </div>
+            <!-- Main Content Area -->
+            <section class="content-area">
+                <div class="breadcrumb">
+                    Anasayfa > <span id="currentCategory">Tüm Ürünler</span>
+                </div>
+
+                <div id="catalogGrid" class="product-grid">
+                    <!-- Javascript content -->
+                </div>
+            </section>
         </div>
-    </section>
+    </main>
 
-    <section class="services-section" id="hizmetler">
+    <footer class="footer-ayaz">
         <div class="container">
-            <div class="section-header">
-                <h2>Neden Yücel Elektrik?</h2>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-bolt"></i></div>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; border-bottom: 1px solid #444; padding-bottom: 3rem; margin-bottom: 2rem;">
                 <div>
-                    <h3>7/24 Teknik Destek</h3>
-                    <p>Elektrik arızaları bekletmez. Acil durumlarda hızlı müdahale ekibimizle her zaman yanınızdayız.
+                    <h4>KURUMSAL</h4>
+                    <ul style="list-style: none; margin-top: 1rem; font-size: 0.9rem; color: #999; line-height: 2;">
+                        <li>Hakkımızda</li>
+                        <li>Banka Hesap Bilgileri</li>
+                        <li>İletişim</li>
+                        <li>KVKK Politikası</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>MÜŞTERİ HİZMETLERİ</h4>
+                    <ul style="list-style: none; margin-top: 1rem; font-size: 0.9rem; color: #999; line-height: 2;">
+                        <li>Garanti ve İade</li>
+                        <li>Sıkça Sorulan Sorular</li>
+                        <li>Kargo Takibi</li>
+                        <li>Ödeme Seçenekleri</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>BİZE ULAŞIN</h4>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #999;">
+                        Merkez Mah. Elektrik Sk. No:42<br>
+                        İstanbul, Türkiye<br><br>
+                        <i class="fas fa-phone"></i> 05XX XXX XX XX<br>
+                        <i class="fas fa-envelope"></i> info@yucelelektrik.com
                     </p>
                 </div>
-            </div>
-
-            <div class="service-card" style="border-left-color: var(--secondary);">
-                <div class="service-icon" style="color: var(--secondary);"><i class="fas fa-shield-halved"></i></div>
                 <div>
-                    <h3>Sertifikalı Güvenlik</h3>
-                    <p>Tüm işlemlerimiz TSE standartlarına uygun malzeme ve uzman personelle gerçekleştirilir.</p>
+                    <h4>BÜLTEN ABONELİĞİ</h4>
+                    <div style="display: flex; margin-top: 1rem;">
+                        <input type="text" placeholder="E-posta adresiniz"
+                            style="padding: 0.6rem; border: none; flex: 1;">
+                        <button
+                            style="padding: 0.6rem 1rem; background: var(--primary); border: none; font-weight: bold;">KAYIT</button>
+                    </div>
                 </div>
             </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-hand-holding-dollar"></i></div>
-                <div>
-                    <h3>Şeffaf Fiyatlandırma</h3>
-                    <p>İşçilik ve malzeme maliyetlerini önceden bilin, sürpriz faturalarla karşılaşmayın.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="iletisim">
-        <div class="container">
-            <div class="logo" style="margin-bottom: 2rem;">YÜCEL ELEKTRİK</div>
-            <p style="margin-bottom: 2rem; color: var(--text-dim);">İstanbul'un her noktasına profesyonel hizmet.</p>
-            <div style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem;">
-                <div>
-                    <i class="fas fa-phone" style="color: var(--primary); margin-bottom: 0.5rem; display: block;"></i>
-                    <span>05XX XXX XX XX</span>
-                </div>
-                <div>
-                    <i class="fas fa-envelope"
-                        style="color: var(--primary); margin-bottom: 0.5rem; display: block;"></i>
-                    <span>bilgi@yucelelektrik.com</span>
-                </div>
-                <div>
-                    <i class="fas fa-map-marker-alt"
-                        style="color: var(--primary); margin-bottom: 0.5rem; display: block;"></i>
-                    <span>Merkez Mah. No:123, İstanbul</span>
-                </div>
-            </div>
-            <div style="color: var(--text-dim); font-size: 0.8rem;">
-                © 2026 Yücel Elektrik. Tüm Hakları Saklıdır.
+            <div style="text-align: center; color: #666; font-size: 0.8rem;">
+                © 2026 Yücel Elektrik. Tüm Hakları Saklıdır. | Replicated with <i class="fas fa-heart"
+                    style="color:red"></i>
             </div>
         </div>
     </footer>
