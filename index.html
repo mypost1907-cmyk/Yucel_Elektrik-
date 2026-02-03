@@ -27,7 +27,7 @@
     <header>
         <div class="container">
             <div class="header-main">
-                <div class="logo">YÜCEL <span>ELEKTRİK</span></div>
+                <div class="logo" id="logoBtn" style="cursor: pointer;">YÜCEL <span>ELEKTRİK</span></div>
 
                 <div class="search-box">
                     <input type="text" id="catalogSearch" placeholder="Aramak istediğiniz ürün veya hizmeti yazın...">
@@ -35,15 +35,15 @@
                 </div>
 
                 <div class="user-actions">
-                    <div class="action-item">
+                    <div class="action-item" id="loginBtn">
                         <i class="fas fa-user"></i>
                         <span>Giriş Yap</span>
                     </div>
-                    <div class="action-item">
+                    <div class="action-item" id="listBtn">
                         <i class="fas fa-heart"></i>
                         <span>Listem</span>
                     </div>
-                    <div class="action-item">
+                    <div class="action-item" id="cartBtn">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Sepetim</span>
                     </div>
@@ -51,6 +51,19 @@
             </div>
         </div>
     </header>
+
+    <section class="hero-section" id="heroSection">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Enerjinizi Biz Taşıyoruz</h1>
+                <p>En kaliteli elektrik malzemeleri ve profesyonel mühendislik çözümleri ile projeleriniz güvende.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary" onclick="filterCategory('Hepsi')">Ürünleri İncele</button>
+                    <button class="btn-secondary" onclick="showPage('iletisim')">Teklif Al</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <main class="container">
         <div class="main-layout">
@@ -107,19 +120,19 @@
                 <div>
                     <h4>KURUMSAL</h4>
                     <ul style="list-style: none; margin-top: 1rem; font-size: 0.9rem; color: #999; line-height: 2;">
-                        <li>Hakkımızda</li>
-                        <li>Banka Hesap Bilgileri</li>
-                        <li>İletişim</li>
-                        <li>KVKK Politikası</li>
+                        <li onclick="showPage('hakkimizda')">Hakkımızda</li>
+                        <li onclick="showPage('banka')">Banka Hesap Bilgileri</li>
+                        <li onclick="showPage('iletisim')">İletişim</li>
+                        <li onclick="showPage('kvkk')">KVKK Politikası</li>
                     </ul>
                 </div>
                 <div>
                     <h4>MÜŞTERİ HİZMETLERİ</h4>
                     <ul style="list-style: none; margin-top: 1rem; font-size: 0.9rem; color: #999; line-height: 2;">
-                        <li>Garanti ve İade</li>
-                        <li>Sıkça Sorulan Sorular</li>
-                        <li>Kargo Takibi</li>
-                        <li>Ödeme Seçenekleri</li>
+                        <li onclick="showPage('iade')">Garanti ve İade</li>
+                        <li onclick="showPage('sss')">Sıkça Sorulan Sorular</li>
+                        <li onclick="showPage('kargo')">Kargo Takibi</li>
+                        <li onclick="showPage('odeme')">Ödeme Seçenekleri</li>
                     </ul>
                 </div>
                 <div>

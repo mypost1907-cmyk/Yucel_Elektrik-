@@ -16,6 +16,10 @@ const catalogData = [
 const catalogGrid = document.getElementById('catalogGrid');
 const searchInput = document.getElementById('catalogSearch');
 const currentCatHeader = document.getElementById('currentCategory');
+const logoBtn = document.getElementById('logoBtn');
+const loginBtn = document.getElementById('loginBtn');
+const listBtn = document.getElementById('listBtn');
+const cartBtn = document.getElementById('cartBtn');
 
 function renderCatalog(items) {
     catalogGrid.innerHTML = '';
@@ -40,6 +44,11 @@ function renderCatalog(items) {
 }
 
 function filterCategory(cat) {
+    // Switch to home view but don't render everything yet
+    catalogGrid.innerHTML = '';
+    currentCatHeader.parentElement.style.display = 'block';
+    window.scrollTo(0, 0);
+
     currentCatHeader.innerText = cat;
     if (cat === 'Hepsi') {
         renderCatalog(catalogData);
@@ -49,11 +58,46 @@ function filterCategory(cat) {
     }
 }
 
+function showHome() {
+    catalogGrid.innerHTML = '';
+    currentCatHeader.parentElement.style.display = 'block';
+    renderCatalog(catalogData);
+    window.scrollTo(0, 0);
+}
+
+function showPage(pageId) {
+    currentCatHeader.parentElement.style.display = 'none';
+    catalogGrid.innerHTML = `<div class="info-page"></div>`;
+    const infoPage = catalogGrid.querySelector('.info-page');
+    infoPage.style.gridColumn = "1/-1";
+    infoPage.style.padding = "2rem";
+    infoPage.style.background = "white";
+    infoPage.style.borderRadius = "8px";
+
+    const pages = {
+        'hakkimizda': '<h2>Hakkımızda</h2><p>Yücel Elektrik, 20 yılı aşkın tecrübesiyle elektrik malzemeleri ve profesyonel işçilik hizmetleri sunan, sektörün öncü firmalarından biridir. Kaliteli malzeme ve güvenilir işçilik prensibiyle çalışıyoruz.</p>',
+        'banka': '<h2>Banka Hesap Bilgileri</h2><p>Ödemelerinizi aşağıdaki IBAN numaralarına yapabilirsiniz. Açıklama kısmına sipariş numaranızı eklemeyi unutmayın.</p><ul><li>TRXX XXXX XXXX XXXX XXXX XX - Yücel Elektrik Tic. Ltd. Şti.</li></ul>',
+        'iletisim': '<h2>İletişim</h2><p>Adres: Merkez Mah. Elektrik Sk. No:42 İstanbul</p><p>Telefon: 05XX XXX XX XX</p><p>E-posta: info@yucelelektrik.com</p>',
+        'kvkk': '<h2>KVKK Politikası</h2><p>Kişisel verilerinizin korunması bizim için önemlidir. Verileriniz 6698 sayılı KVKK kapsamında güvence altındadır.</p>',
+        'iade': '<h2>Garanti ve İade</h2><p>Tüm ürünlerimiz 2 yıl üretici garantisindedir. 14 gün içerisinde koşulsuz iade hakkınız bulunmaktadır.</p>',
+        'sss': '<h2>Sıkça Sorulan Sorular</h2><p><strong>S: Kargo ne zaman ulaşır?</strong><br>C: Saat 15:00\'e kadar verilen siparişler aynı gün kargolanır.</p>',
+        'kargo': '<h2>Kargo Takibi</h2><p>Kargo takip numaranız SMS ile tarafınıza iletilecektir. Buradan sorgulama yapabilirsiniz.</p><input type="text" placeholder="Takip No" style="padding:10px; margin-top:10px;">',
+        'odeme': '<h2>Ödeme Seçenekleri</h2><p>Kredi Kartı, EFT/Havale ve Kapıda Ödeme seçeneklerimiz mevcuttur.</p>',
+        'login': '<h2>Müşteri Girişi</h2><form style="display:flex; flex-direction:column; gap:1rem; max-width:300px;"><input type="email" placeholder="E-posta"><input type="password" placeholder="Şifre"><button class="add-to-cart">Giriş Yap</button></form>',
+        'list': '<h2>Favori Listem</h2><p>Henüz favori listenizde ürün bulunmamaktadır.</p>',
+        'cart': '<h2>Alışveriş Sepetim</h2><p>Sepetiniz şu an boş. Alışverişe devam etmek için ana sayfaya dönebilirsiniz.</p>'
+    };
+
+    infoPage.innerHTML = pages[pageId] || '<h2>Sayfa Bulunamadı</h2>';
+    window.scrollTo(0, 0);
+}
+
 // Initial Render
 renderCatalog(catalogData);
 
 // Search Logic
 searchInput.addEventListener('input', (e) => {
+    showHome();
     const term = e.target.value.toLowerCase();
     const filtered = catalogData.filter(item =>
         item.name.toLowerCase().includes(term) ||
@@ -62,3 +106,8 @@ searchInput.addEventListener('input', (e) => {
     );
     renderCatalog(filtered);
 });
+
+logoBtn.addEventListener('click', showHome);
+loginBtn.addEventListener('click', () => showPage('login'));
+listBtn.addEventListener('click', () => showPage('list'));
+cartBtn.addEventListener('click', () => showPage('cart'));
